@@ -9,3 +9,12 @@ installed (all for python 2.x):
     - PyMongo v2.7.2
     - MongoEngine v0.8.7
     - django-extensions v1.4.4
+
+Contributors
+============
+
+    - Alex
+    - James
+    - Timothy
+    - Adam
+    - Jason
