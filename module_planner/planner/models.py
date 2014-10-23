@@ -1,7 +1,7 @@
 from django.db import models
 
 # The Module class
-class Module(Document):
+class Module():
     user = ReferenceField(User, reverese_delete_rule=CASCADE)
     name = StringField(max_length=200, required=True)
     desc = StringField(required=True)
