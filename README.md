@@ -14,7 +14,8 @@ Contributors
 ============
 
     - Alex
-    - James
     - Timothy
     - Adam
-    - Jason
+    - Vince
+    - James
+    - Json
