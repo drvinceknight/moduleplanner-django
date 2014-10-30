@@ -4,40 +4,29 @@ Functional tests using selenium.
 from selenium import webdriver
 import unittest
 
-class NewVisitorTest(unittest.TestCase):  #1
+class IndexPage(unittest.TestCase):
 
-    def setUp(self):  #2
-        self.browser = webdriver.Firefox()
+    def setUp(self):
+        self.firefox = webdriver.Firefox()
+        self.chrome = webdriver.Chrome()
 
-    def tearDown(self):  #3
-        self.browser.quit()
+    def tearDown(self):
+        self.firefox.quit()
+        self.chrome.quit()
 
-    def test_can_start_a_list_and_retrieve_it_later(self):  #4
-        # Edith has heard about a cool new online to-do app. She goes
-        # to check out its homepage
-        self.browser.get('http://localhost:8000')
+    def test_title_in_firefox(self):
+        """
+        Test the title in firefox
+        """
+        self.firefox.get('http://localhost:8000')
+        self.assertIn('Module Planner', self.firefox.title)
 
-        # She notices the page title and header mention to-do lists
-        self.assertIn('Module Planner', self.browser.title)  #5
+    def test_title_in_chrome(self):
+        """
+        Test the title in Chrome
+        """
+        self.chrome.get('http://localhost:8000')
+        self.assertIn('Module Planner', self.chrome.title)
 
-        # She is invited to enter a to-do item straight away
-
-if __name__ == '__main__':  #7
-    unittest.main()  #8
-
-## Firefox tests for the index page
-#
-#browser = webdriver.Firefox()
-#browser.get('http://localhost:8000')
-#
-#assert 'Module Planner' in browser.title
-#browser.quit()
-#
-## Chrome tests for the index page
-## To use this you need to have ChromeDriver (https://code.google.com/p/selenium/wiki/ChromeDriver)
-#
-#browser = webdriver.Chrome()
-#browser.get('http://localhost:8000')
-#
-#assert 'Module Planner' in browser.title
-#browser.quit()
+if __name__ == '__main__':
+    unittest.main()
