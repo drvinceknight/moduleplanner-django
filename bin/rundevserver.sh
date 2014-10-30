@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Change to project root and activate the virtualenv
 echo "\t=> Activating Virtualenv"
