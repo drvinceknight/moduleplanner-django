@@ -19,3 +19,13 @@ Contributors
     - Vince
     - James
     - Json
+
+Installation
+============
+
+Run pip install virtualenv
+Install mongodb
+Run pip install -r requirements.txt
+Make the folder module_planner/db
+
+Navigate to /bin and run rundevserver.sh
