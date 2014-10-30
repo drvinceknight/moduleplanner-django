@@ -1,8 +1,25 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-import datetime
+from django.template import Template, Context
+from django.template.loader import get_template
+from django.views.generic import View
+from tools.dbmanager import ModuleDB
 
-# Create your views here.
-def current_datetime(request):
-    now = datetime.datetime.now()
-    return render(request, 'planner/front_page.html')
+# The module info view, used to display in depth information about a module
+class ModuleInfoView(View):
+
+    def get(self, request):
+
+        # Create a new ModuleDB instance
+        database = ModuleDB()
+
+        # Get the record from the database
+        module_info = database.getModule({"code": "MA1023"})
+
+        # Load the template
+        t = get_template("module.html")
+
+        # Render the html
+        html = t.render(Context({'name': module_info['name']}))
+
+        return HttpResponse(html)
+
