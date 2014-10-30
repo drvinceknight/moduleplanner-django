@@ -2,3 +2,4 @@ Django==1.7
 PyMongo==2.7
 MongoEngine==0.8
 django-extensions==1.4
+djangorestframework
