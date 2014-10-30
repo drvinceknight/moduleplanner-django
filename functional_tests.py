@@ -2,18 +2,31 @@
 Functional tests using selenium.
 """
 from selenium import webdriver
+import unittest
 
-# Firefox tests for the index page
+class IndexPage(unittest.TestCase):
 
-browser = webdriver.Firefox()
-browser.get('http://localhost:8000')
+    def setUp(self):
+        self.firefox = webdriver.Firefox()
+        self.chrome = webdriver.Chrome()
 
-assert 'Module Planner' in browser.title
+    def tearDown(self):
+        self.firefox.quit()
+        self.chrome.quit()
 
-# Chrome tests for the index page
-# To use this you need to have ChromeDriver (https://code.google.com/p/selenium/wiki/ChromeDriver)
+    def test_title_in_firefox(self):
+        """
+        Test the title in firefox
+        """
+        self.firefox.get('http://localhost:8000')
+        self.assertIn('Module Planner', self.firefox.title)
 
-browser = webdriver.Chrome()
-browser.get('http://localhost:8000')
+    def test_title_in_chrome(self):
+        """
+        Test the title in Chrome
+        """
+        self.chrome.get('http://localhost:8000')
+        self.assertIn('Module Planner', self.chrome.title)
 
-assert 'Module Planner' in browser.title
+if __name__ == '__main__':
+    unittest.main()

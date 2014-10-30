@@ -22,10 +22,11 @@ installed (all for python 2.x):
 
 Run pip install virtualenv
 Install mongodb
-Run pip install -r requirements.txt
-Make the folder `module_planner/db`
-
-Navigate to /bin and run rundevserver.sh
+Make the folder `/module_planner/db/`
+Navigate to /
+Run 'source env/bin/activate'
+Run 'pip install -r requirements.txt'
+Navigate to /bin/ and run './rundevserver.sh'
 
 # Tests
 
