@@ -1,3 +1,5 @@
-from django.test import TestCase
+from module_planner.testrunner import NoDbTestRunner
 
-# Create your tests here.
+class SmokeTest(NoDbTestRunner):
+    def test_bad_maths(self):
+        self.assertEqual(1+1,3)
