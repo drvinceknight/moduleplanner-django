@@ -73,16 +73,6 @@ TEMPLATE_URL = '/templates/'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 
-AUTHENTICATION_BACKENDS = (
-        'mongoengine.django.auth.MongoEngineBackend',
-)
-
-SESSION_ENGINE = 'mongoengine.django.sessions'
-MONGO_DATABASE_NAME = 'plannerDB'
-
-from mongoengine import connect
-connect(MONGO_DATABASE_NAME)
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
