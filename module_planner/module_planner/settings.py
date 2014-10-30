@@ -50,6 +50,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+        'django.contrib.auth.context_processors.auth',
+        'django.contrib.messages.context_processors.messages'
+        )
+
 ROOT_URLCONF = 'module_planner.urls'
 
 WSGI_APPLICATION = 'module_planner.wsgi.application'
