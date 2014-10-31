@@ -23,15 +23,15 @@ installed (all for python 2.x):
 Assuming your repo's root is `root`
 Setup a virtualenv in `root/env`:
 
-    root$ virtualenv env
+        root$ virtualenv env
 
 - Source the virtual env:
 
-    root$ source env/bin/activate
+        root$ source env/bin/activate
 
 - Install the python packages:
 
-    root$ pip install -r requirements.txt
+        root$ pip install -r requirements.txt
 
 - Install mongodb:
 
