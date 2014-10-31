@@ -20,13 +20,37 @@ installed (all for python 2.x):
 
 # Installation
 
-Run pip install virtualenv
-Install mongodb
-Make the folder `/module_planner/db/`
-Navigate to /
-Run 'source env/bin/activate'
-Run 'pip install -r requirements.txt'
-Navigate to /bin/ and run './rundevserver.sh'
+Assuming your repo's root is `root`
+Setup a virtualenv in `root/env`:
+
+    root$ virtualenv env
+
+- Source the virtual env:
+
+    root$ source env/bin/activate
+
+- Install the python packages:
+
+    root$ pip install -r requirements.txt
+
+- Install mongodb:
+
+    On Mac OS (using homebrew):
+
+        root$ brew install mongodb
+
+    On Ubuntu:
+
+        root$ apt-get install mongodb
+
+- Make the folder `/module_planner/db/`
+
+        root$ mkdir module_planner/db
+
+- Navigate to `root/bin/` and run the server startup script:
+
+        root$ cd bin
+        root/bin$ ./rundevserver.sh
 
 # Tests
 
