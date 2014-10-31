@@ -1,0 +1,8 @@
+{
+    "module" : {
+                "name": "Calculus",
+                "year": 1,
+                "requirements": ["None"],
+                "credits": 10
+    }
+}
