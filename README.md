@@ -3,6 +3,7 @@
 ## Installation
 
 Make sure you have the following installed before continuing:
+
     - git
     - python2-pip
     - virutalenv
