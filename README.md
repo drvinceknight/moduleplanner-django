@@ -1,13 +1,49 @@
 # Module Planner
 
-To be able to run code in this repository you need the following packages
-installed (all for python 2.x):
+## Installation
 
-    - Django v1.7.1
-    - MongoDB v2.6.5
-    - PyMongo v2.7.2
-    - MongoEngine v0.8.7
-    - django-extensions v1.4.4
+Make sure you have the following installed before continuing:
+
+    - git
+    - python2-pip
+    - virutalenv
+    - mongodb
+
+If you haven't done so already clone the repository by running:
+```
+    $ git clone https://github.com/alcarney/moduleplanner-django.git
+```
+
+Then ```cd``` into your newly cloned repository and create a new virtual env
+```
+    $ virtualenv env
+```
+
+Activate your newly created virtualenv
+```
+    $ source env/bin/activate
+```
+You can check that this worked by running ```which python ``` which prints to the
+shell the filepath of the python binary it should end with
+```
+    path/to/cloned/repo/env/bin/python
+```
+
+This next command will then install django and the other python dependencies needed for
+this project into your virtualenv
+```
+    $ pip install -r requirements.txt
+```
+
+## Running the development server
+
+Once you have everything you need installed and ready to go you can fire up the development server
+by navigating to the ```bin``` directory and running
+```
+$ ./rundevserver.sh
+```
+__Note:__ Currently before running this command you have to create the directory ```module_planner/db/ ```
+for this command to work this will be changed in the future so that this step is not necessary
 
 # Contributors
 
@@ -18,39 +54,6 @@ installed (all for python 2.x):
     - James
     - Json
 
-# Installation
-
-Assuming your repo's root is `root`
-Setup a virtualenv in `root/env`:
-
-        root$ virtualenv env
-
-- Source the virtual env:
-
-        root$ source env/bin/activate
-
-- Install the python packages:
-
-        root$ pip install -r requirements.txt
-
-- Install mongodb:
-
-    On Mac OS (using homebrew):
-
-        root$ brew install mongodb
-
-    On Ubuntu:
-
-        root$ apt-get install mongodb
-
-- Make the folder `/module_planner/db/`
-
-        root$ mkdir module_planner/db
-
-- Navigate to `root/bin/` and run the server startup script:
-
-        root$ cd bin
-        root/bin$ ./rundevserver.sh
 
 # Tests
 
